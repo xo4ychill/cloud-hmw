@@ -1,0 +1,17 @@
+# Скопируйте в terraform.tfvars и заполните реальными значениями:
+#   cp terraform.tfvars.example terraform.tfvars
+# НЕ коммитьте terraform.tfvars — содержит токен.
+
+service_account_key_file = "~/.authorized_key.json"
+
+cloud_id  = "b1gxxxxxxxxxxxxxxxxx"      # см. README: `yc config list`
+folder_id = "b1gyyyyyyyyyyyyyyyyy"      # см. README: `yc config list`
+default_zone      = "ru-central1-a"
+
+
+
+ssh_public_key = ""~/.ssh/id_ed25519.pub""
+
+
+# Остальные переменные (CIDR подсетей, IP NAT-инстанса, image_id) уже заданы
+# значениями по умолчанию в variables.tf
