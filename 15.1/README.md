@@ -5,7 +5,7 @@
 ### для Yandex Cloud
 | Инструмент/компонент | Зачем нужен | Проверка |
 |---|---|---|
-| [Terraform](https://developer.hashicorp.com/terraform/install) >= 1.5 | Разворачивает всю инфраструктуру, описанную в `yandex/` | `terraform version` |
+| [Terraform](https://developer.hashicorp.com/terraform/install) >= 1.5 | Разворачивает всю инфраструктуру, описанную для `yandex` | `terraform version` |
 | [Yandex Cloud CLI (`yc`)](https://yandex.cloud/ru/docs/cli/quickstart) | Авторизация, получение `cloud_id`/`folder_id`/токена для Terraform (сам `yc` инфраструктуру не создаёт — это делает Terraform) | `yc version` |
 | Аккаунт Yandex Cloud с активным биллингом | Без этого `yc init` и `terraform apply` не смогут ничего создать | Проверяется в [консоли](https://console.yandex.cloud) |
 | SSH-ключевая пара | Доступ к создаваемым ВМ (публичный ключ передаётся через `metadata.ssh-keys`, см. `yandex/variables.tf: ssh_public_key_path`) | `ls ~/.ssh/id_rsa.pub` (сгенерировать при отсутствии: `ssh-keygen -t rsa -b 4096`) |
