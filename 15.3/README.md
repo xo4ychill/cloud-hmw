@@ -61,7 +61,7 @@
 
 ### Решение
 
-1. **Симметричный KMS-ключ** (`yandex_kms_symmetric_key.this`) — `default_algorithm = "AES_128"`, `rotation_period = "8760h"` (1 год, автоматическая ротация).
+1. **Симметричный KMS-ключ** (`yandex_kms_symmetric_key.kms_key`) — `default_algorithm = "AES_128"`, `rotation_period = "8760h"` (1 год, автоматическая ротация).
 
 2. **Право на использование ключа.** Шифрование/расшифровку объектов при обращении к бакету фактически выполняет **тот же сервисный аккаунт**, что уже работает с Object Storage через статический ключ (`storage_sa` из HW15.2). Этому же аккаунту нужна ещё одна роль — `kms.keys.encrypterDecrypter`. Выдана на уровне **каталога** через `yandex_resourcemanager_folder_iam_member` — это способ, прямо рекомендованный официальной документацией Yandex Cloud для управления доступом к KMS-ключам из Terraform.
 
