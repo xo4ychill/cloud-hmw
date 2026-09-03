@@ -14,7 +14,7 @@
 | Компонент | Зачем | Проверка |
 |---|---|---|
 | Провайдер Terraform `hashicorp/random` >= 3.5 | Генерирует уникальный суффикс имени бакета (имена бакетов уникальны глобально — см. ниже) | Подтягивается автоматически при `terraform init`|
-| Файл-картинка для загрузки в бакет | По заданию — "положить в бакет файл с картинкой" | [`assets/picture.png`](./assets/picture.png) / |
+| Файл-картинка для загрузки в бакет | По заданию — "положить в бакет файл с картинкой" | [`assets/picture.png`](./assets/picture.png)  |
 | Право `storage.editor` в каталоге Yandex Cloud | Нужно сервисному аккаунту, который Terraform создаёт для работы с Object Storage (см. `modules/object_storage`) | Выдаётся автоматически самим Terraform-кодом (`yandex_resourcemanager_folder_iam_member`) |
 
 ---
